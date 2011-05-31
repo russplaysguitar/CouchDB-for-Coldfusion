@@ -1,0 +1,1 @@
+<cfcomponent>	<cfset this.type = 'post'>    <cfset this.title = ''>    <cfset this.post = ''>    <cfset this.datestamp = now()>    <cfset this.author = ''></cfcomponent>

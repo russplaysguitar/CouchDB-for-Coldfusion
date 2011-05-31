@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/couchdb/!svn/ver/146/examples/simple_examples
+END
+document_test.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/couchdb/!svn/ver/146/examples/simple_examples/document_test.cfm
+END
+myClass.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/couchdb/!svn/ver/138/examples/simple_examples/myClass.cfc
+END
+OODB_test.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/couchdb/!svn/ver/139/examples/simple_examples/OODB_test.cfm
+END
+database_test.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/couchdb/!svn/ver/133/examples/simple_examples/database_test.cfm
+END
+Application.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/couchdb/!svn/ver/124/examples/simple_examples/Application.cfc
+END
+bulk_document_test.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/couchdb/!svn/ver/135/examples/simple_examples/bulk_document_test.cfm
+END

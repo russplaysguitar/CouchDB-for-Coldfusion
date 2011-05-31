@@ -1,0 +1,1 @@
+<cflocation url="readme.txt" addtoken="no" />

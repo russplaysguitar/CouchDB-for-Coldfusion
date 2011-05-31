@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/couchdb/!svn/ver/92/view_server
+END
+wget.jar
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/couchdb/!svn/ver/91/view_server/wget.jar
+END
+wget.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/couchdb/!svn/ver/91/view_server/wget.java
+END
+view_server.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/couchdb/!svn/ver/92/view_server/view_server.cfc
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/couchdb/!svn/ver/91/view_server/readme.txt
+END
+Application.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/couchdb/!svn/ver/29/view_server/Application.cfc
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/couchdb/!svn/ver/136/examples/couchdb_blog
+END
+index.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/couchdb/!svn/ver/110/examples/couchdb_blog/index.cfm
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/couchdb/!svn/ver/66/examples/couchdb_blog/readme.txt
+END
+admin.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/couchdb/!svn/ver/100/examples/couchdb_blog/admin.cfm
+END
+Application.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/couchdb/!svn/ver/136/examples/couchdb_blog/Application.cfc
+END
