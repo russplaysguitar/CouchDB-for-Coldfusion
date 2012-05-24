@@ -104,6 +104,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		<!--- do http request --->
 		<cfhttp url='#variables.couch_url#/#variables.db_name#/_all_docs?include_docs=#arguments.include_docs##key_range_params#' 
 				port="#variables.couch_port#" method="#http_method#" username="#variables.couch_username#" password="#variables.couch_password#">
+			<cfhttpparam type="header" name="Content-Type" value="application/json">	
 			<cfif keys_array_JSON neq ''>
 				<!--- list of keys (if provided) --->
 				<cfhttpparam type="body" value='{"keys":#keys_array_JSON#}'>
@@ -140,9 +141,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		
 		<cfset var result = ''>
 		
-		<cfinvoke component="json" method="encode" stringNumbers="true" data="#data#" returnvariable="result">
+		<cfset result = REReplace(SerializeJSON(arguments.data),'("[A-Z]*"[ ]?:)','\L\1','All')>
+        	<cfset result = REReplace(result,'("[A-Z]*[0-9]"[ ]?:)','\L\1','All')>
 		
-		<cfreturn result>
+		<cfreturn reReplace(result,'([_a-zA-Z]*)(":)','\L\1\2','ALL')>
 	</cffunction>
 	
 	
@@ -152,7 +154,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		
 		<cfset var result = ''>
 		
-		<cfinvoke component="json" method="decode" data="#data#" returnvariable="result">
+		<cfset result = DeserializeJSON(arguments.data)>
 		
 		<cfreturn result>
 	</cffunction>
