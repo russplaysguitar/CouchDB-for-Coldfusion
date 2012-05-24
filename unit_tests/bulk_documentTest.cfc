@@ -47,7 +47,7 @@
 		<!--- init bulk doc cfc --->
 		<cfscript>
 			this.database_params = {
-				db_name = 'my_database',
+				db_name = 'couch4cf_unit_tests',
 				couch_port = 5984,
 				couch_host = '127.0.0.1'
 			};
