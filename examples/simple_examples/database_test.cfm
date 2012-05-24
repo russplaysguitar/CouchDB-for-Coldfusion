@@ -21,6 +21,11 @@ List all databases:
 
 <br />
 
+Changes:
+<cfdump var="#myDatabase.changes()#">
+
+<br />
+
 Info:
 <cfdump var="#myDatabase.info()#">
 
