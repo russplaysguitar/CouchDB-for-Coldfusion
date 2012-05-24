@@ -225,7 +225,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 	</cffunction>
 	
 	
-	<!--- JSON HELPER METHODS --->
+	<!--- JSON HELPER METHODS                                                                         --->
 	
 	<!--- encodeJSON --->
 	<cffunction name="encodeJSON" access="private" returntype="String">
@@ -233,10 +233,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		
 		<cfset var result = ''>
 		
-		<cfset result = REReplace(SerializeJSON(arguments.data),'("[A-Z]*"[ ]?:)','\L\1','All')>
-        	<cfset result = REReplace(result,'("[A-Z]*[0-9]"[ ]?:)','\L\1','All')>
+		<cfinvoke component="json" method="encode" stringNumbers="true" data="#data#" returnvariable="result">
 		
-		<cfreturn reReplace(result,'([_a-zA-Z]*)(":)','\L\1\2','ALL')>
+		<cfreturn result>
 	</cffunction>
 	
 	
@@ -246,7 +245,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		
 		<cfset var result = ''>
 		
-		<cfset result = DeserializeJSON(arguments.data)>
+		<cfinvoke component="json" method="decode" data="#data#" returnvariable="result">
 		
 		<cfreturn result>
 	</cffunction>
