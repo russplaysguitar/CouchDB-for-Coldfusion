@@ -23,8 +23,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		<cfargument name="key" type="string" required="false" default="" hint="Specific key to retrieve.">
 		<cfargument name="keys" type="string" required="false" default="" hint="List of keys to retrieve.">
 		<cfargument name="startkey" type="string" required="false" default="" hint="Key to start at.">
+		<cfargument name="startkeyarr" type="array" required="false" hint="Array Key to start at.">
 		<cfargument name="startkey_docid" type="string" required="false" default="" hint="Document ID to start with.">
 		<cfargument name="endkey" type="string" required="false" default="" hint="Key to end at.">
+		<cfargument name="endkeyarr" type="array" required="false" hint="Array Key to end at.">
 		<cfargument name="endkey_docid" type="string" required="false" default="" hint="Last document ID. Included in result unless inclusive_end is explicitly set to false.">
 		<cfargument name="limit" type="string" required="false" default="" hint="Limit the number of documents in the output. Numeric or blank.">
 		<cfargument name="stale" type="string" required="false" default="" hint="If stale=ok CouchDB will not refresh the view even if it is stalled. 'ok' or blank.">
@@ -65,11 +67,17 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 			<cfif arguments.startkey neq ''>
 				<cfhttpparam name="startkey" value="#encodeJSON(arguments.startkey)#" type="url">
 			</cfif>
+			<cfif IsDefined('arguments.startkeyarr') AND ArrayLen(arguments.startkeyarr)>
+				<cfhttpparam name="startkey" value="#encodeJSON(arguments.startkeyarr)#" type="url">
+			</cfif>
 			<cfif arguments.startkey_docid neq ''>
 				<cfhttpparam name="startkey_docid" value="#arguments.startkey_docid#" type="url">
 			</cfif>
 			<cfif arguments.endkey neq ''>
 				<cfhttpparam name="endkey" value="#encodeJSON(arguments.endkey)#" type="url">
+			</cfif>
+			<cfif IsDefined('arguments.endkeyarr') AND ArrayLen(arguments.endkeyarr)>
+				<cfhttpparam name="endkey" value="#encodeJSON(arguments.endkeyarr)#" type="url">
 			</cfif>
 			<cfif arguments.endkey_docid neq ''>
 				<cfhttpparam name="endkey_docid" value="#arguments.endkey_docid#" type="url">
