@@ -77,7 +77,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		<cfset variables.db_name = arguments.db_name>
 		<cfset variables.couch_host = arguments.couch_host>
 		<cfset variables.couch_port = arguments.couch_port>
-		<cfset variables.couch_url = 'http://#variables.couch_host#'>
+		<cfset variables.couch_url = 'http://#variables.couch_host#:#arguments.couch_port#'>
 		<cfset variables.couch_username = arguments.couch_username>
 		<cfset variables.couch_password = arguments.couch_password>
 
