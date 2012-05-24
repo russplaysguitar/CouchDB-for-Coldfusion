@@ -125,6 +125,13 @@
 				couch_port = 5984,
 				couch_host = '127.0.0.1'
 			};
+			
+			// create database (if it doesn't exist already)
+			this.databaseObj = createObject('component','couch4cf.database').init(argumentCollection = this.database_params);
+			if(!this.databaseObj.exists())
+				this.databaseObj.create();
+
+			// create this document object	
 			this.docObj = createObject("component","couch4cf.document").init(argumentCollection = this.database_params);	
 			//this.docObj.id = createUUID();// (optional)
 			this.docObj.data = '{"greetings":"hello world!!"}';	
@@ -133,10 +140,14 @@
 
 
 	<cffunction name="tearDown" returntype="void" access="public">
-		<!--- delete document from database (if it still exists) --->
 		<cfscript>
+			// delete document from database (if it still exists)
 			if(this.docObj.document_exists())
 				this.docObj.delete();
+
+			// get rid of this database
+			if(this.databaseObj.exists())
+				this.databaseObj.delete();
 		</cfscript>
 	</cffunction>
 
