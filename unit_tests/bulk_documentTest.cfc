@@ -51,13 +51,23 @@
 				couch_port = 5984,
 				couch_host = '127.0.0.1'
 			};
+			
+			// create database (if it doesn't exist already)
+			this.databaseObj = createObject('component','couch4cf.database').init(argumentCollection = this.database_params);
+			if(!this.databaseObj.exists())
+				this.databaseObj.create();
+
 			this.bulkDocObj = createObject("component","couch4cf.bulk_document").init(argumentCollection = this.database_params);
 		</cfscript>
 	</cffunction>
 
 
 	<cffunction name="tearDown" returntype="void" access="public">
-
+		<cfscript>
+			// cleanup: remove database
+			if(this.databaseObj.exists())
+				this.databaseObj.delete();
+		</cfscript>
 	</cffunction>
 
 </cfcomponent>
