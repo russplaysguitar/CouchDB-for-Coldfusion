@@ -2,6 +2,8 @@
 	<!--- encodeJSON --->
 	<cffunction name="encode" access="public" returntype="String">
 		<cfargument name="data" type="Any" required="yes">
+		<cfargument name="stringNumbers" type="boolean" required="no" default="false"><!--- TODO: implement this --->
+
 		
 		<cfset var result = ''>
 		
