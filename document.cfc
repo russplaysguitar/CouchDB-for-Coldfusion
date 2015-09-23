@@ -33,7 +33,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 <!--- TODOs: 
 	- improve error handler to include all possible errors
-	- make copy method work with username and password
 	--->
 
 <!--- design notes:
