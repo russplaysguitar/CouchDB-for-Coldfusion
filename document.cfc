@@ -260,7 +260,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		<!--- custom HTTP Request --->
 		<!--- note: this is sensitive to formatting. do not add tabs. --->
 		<cfset http_request[1] = "COPY /#variables.db_name#/#arguments.id# HTTP/1.1">
-		<cfset http_request[2] = "Destination: #arguments.new_id##revision_string#">
+		<cfset http_request[2] = "Authorization: Basic " & getCredentials()>
+		<cfset http_request[3] = "Destination: #arguments.new_id##revision_string#">
 		
 		<!--- do request --->
 		<!--- note: improper HTTP requests will result in time-out errors --->
@@ -633,5 +634,17 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		
 		return myStruct;
 		</cfscript>
+	</cffunction>
+
+	
+	
+	<!--- binary encode base 64 for user / password --->
+	<cffunction name="getCredentials" access="private" hint="Return." returntype="string">
+		<cfreturn binaryEncode(
+            toBinary(
+                toBase64( "#variables.couch_username#:#variables.couch_password#" )
+            )
+        , "base64" )>
+        
 	</cffunction>
 </cfcomponent>
